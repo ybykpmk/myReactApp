@@ -8,7 +8,7 @@ const TextInput = ({ name, label, onChange, placeHolder, value, error }) => {
 
     return (
         <div className={wrapperClass}>
-            <label htmlFor={name}></label>
+            <label htmlFor={name}><b>{label}</b></label>
             <div className="field">
                 <input type="text" name={name} className="form-control" placeholder={placeHolder} value={value} onChange={onChange}>
                 </input>
