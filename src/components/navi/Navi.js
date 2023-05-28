@@ -24,17 +24,12 @@ export default class Navi extends React.Component {
         return (
             <div>
                 <Navbar color='light' light expand='md'>
-                    <NavbarBrand href="/">Northwind App</NavbarBrand>
+                    <NavbarBrand href="/">Northwind Mağazası</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <NavLink href="/components/">Components
-                                </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="https://github.com/reactstrap/reactstrap">
-                                    GitHub
+                                <NavLink href="/saveproduct/">Ürün Ekle
                                 </NavLink>
                             </NavItem>
                             <CartSummary></CartSummary>

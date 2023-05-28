@@ -14,7 +14,7 @@ function AddOrUpdateProduct({
     ...props
 }) {
     const [ product, setProduct ] = useState({ ...props.product });
-
+    const [errors,setErrors]=useState({});
     useEffect(() => {
         if (categories.length === 0) {
             getCategories();
@@ -27,7 +27,51 @@ function AddOrUpdateProduct({
         setProduct(previousProduct => ({
             ...previousProduct,
             [name]: name === "categoryId" ? parseInt(value, 10) : value
-        }))
+        }));
+        validate(name,value);
+    }
+
+    function validate(name,value){
+        if (name==="productName" && value==="")
+        {
+            setErrors(previousErrors=>({...previousErrors,productName:"Ürün ismi olmalıdır"}));
+        }
+        else
+        {
+            setErrors(previousErrors=>({...previousErrors,productName:""}));            
+        }
+        if (name==="categoryId" && value==="")
+        {
+            setErrors(previousErrors=>({...previousErrors,categoryId:"Category ismi seçilmelidir"}));
+        }
+        else
+        {
+            setErrors(previousErrors=>({...previousErrors,categoryId:""}));            
+        }
+        if (name==="unitPrice" && value==="")
+        {
+            setErrors(previousErrors=>({...previousErrors,unitPrice:"Unit Price olmalıdır"}));
+        }
+        else
+        {
+            setErrors(previousErrors=>({...previousErrors,unitPrice:""}));            
+        }
+        if (name==="quantityPerUnit" && value==="")
+        {
+            setErrors(previousErrors=>({...previousErrors,quantityPerUnit:"Quantity Per Unit olmalıdır"}));
+        }
+        else
+        {
+            setErrors(previousErrors=>({...previousErrors,quantityPerUnit:""}));            
+        }
+        if (name==="unitsInStock" && value==="")
+        {
+            setErrors(previousErrors=>({...previousErrors,unitsInStock:"Units In Stock olmalıdır"}));
+        }
+        else
+        {
+            setErrors(previousErrors=>({...previousErrors,unitsInStock:""}));            
+        }        
     }
 
     function handleSave(event) {
@@ -38,7 +82,7 @@ function AddOrUpdateProduct({
     }
 
     return (
-        <ProductDetail product={product} categories={categories} onChange={handleChange} onSave={handleSave} ></ProductDetail>
+        <ProductDetail product={product} categories={categories} onChange={handleChange} onSave={handleSave} errors={errors} ></ProductDetail>
     )
 }
 

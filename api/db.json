@@ -29,8 +29,8 @@
       "categoryId": 2,
       "productName": "Chef Anton's Gumbo Mix",
       "quantityPerUnit": "36 boxes",
-      "unitPrice": "22",
-      "unitsInStock": 0
+      "unitPrice": "26",
+      "unitsInStock": "6"
     },
     {
       "id": 6,
@@ -624,6 +624,33 @@
     {
       "categoryId": 2,
       "id": 82
+    },
+    {
+      "productName": "Pizza of Pınar",
+      "categoryId": 1,
+      "unitPrice": "26",
+      "quantityPerUnit": "34",
+      "unitsInStock": "26",
+      "id": 83
+    },
+    {
+      "id": 84
+    },
+    {
+      "productName": "a",
+      "categoryId": 1,
+      "unitPrice": "a",
+      "quantityPerUnit": "a",
+      "unitsInStock": "",
+      "id": 85
+    },
+    {
+      "productName": "h",
+      "categoryId": 2,
+      "unitPrice": "l",
+      "quantityPerUnit": "k",
+      "unitsInStock": "k",
+      "id": 86
     }
   ],
   "categories": [
